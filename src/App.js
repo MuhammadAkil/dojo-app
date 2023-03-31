@@ -30,7 +30,7 @@ function App() {
       <div className="content">
         <Home />
       </div>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="d-flex justify-content-center ">
           <div className=" text-center spinner-grow " role="status">
             <span className="sr-only visually-hidden">Loading...</span>
@@ -38,13 +38,29 @@ function App() {
         </div>
       ) : (
         <div className="row">
-          {quote.map((quote) => (
-            <div key={quote.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
-              <Products quote={quote} className="card" />
+          <div key={quote.id}>
+            <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+              <Products
+                quote={quote.filter(
+                  (quote) => quote.category === "women's clothing"
+                )}
+                className="card"
+                category="Women Clothing"
+              />
             </div>
-          ))}
+
+            <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+              <Products
+                quote={quote.filter(
+                  (quote) => quote.category === "men's clothing"
+                )}
+                className="card"
+                category="Mens Clothing"
+              />
+            </div>
+          </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
